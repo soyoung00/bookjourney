@@ -17,6 +17,8 @@ function JourneyDetailClient() {
   const [goalCount, setGoalCount] = useState(12);
   const [showPastReviews, setShowPastReviews] = useState(false);
   const currentYear = new Date().getFullYear();
+  const [showLevelInfo, setShowLevelInfo] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const readingReviews = myReviews.filter((review) => {
     return review.status === "reading";
@@ -48,7 +50,10 @@ function JourneyDetailClient() {
   };
 
   const getBookInfo = async () => {
-    if (myReviews.length === 0) return;
+    if (myReviews.length === 0) {
+      setLoading(false);
+      return;
+    }
 
     const queryString = myReviews
       .map((review) => `isbn=${review.bookId}`)
@@ -58,6 +63,7 @@ function JourneyDetailClient() {
 
     const books = await res.json();
     setBookList(books);
+    setLoading(false);
   };
 
   const getGoals = async () => {
@@ -109,15 +115,42 @@ function JourneyDetailClient() {
 
 
   useEffect(() => {
-    getMyReview();
-    getGoals();
-    getUserInfo();
+    if (!session) {
+      setLoading(false);
+      return;
+    }
+
+    const fetchData = async () => {
+      setLoading(true);
+
+      await Promise.all([
+        getMyReview(),
+        getGoals(),
+        getUserInfo(),
+      ]);
+
+    };
+
+    fetchData();
   }, [session]);
 
   useEffect(() => {
     getBookInfo();
   }, [myReviews]);
 
+  if (loading) {
+    return (
+      <div className={styles.loadingWrap}>
+        <p>로딩 중</p>
+
+        <div className={styles.dots}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className={styles.journeyWrap}>
 
@@ -157,7 +190,25 @@ function JourneyDetailClient() {
         </div>
 
         <h2>{userInfo?.name}</h2>
-        <p>LV.{userInfo?.growth?.level || "-"}</p>
+        <div className={styles.levelWrap}>
+          <p>LV.{userInfo?.growth?.level || "-"}</p>
+
+          <button
+            type="button"
+            className={styles.infoBtn}
+            onClick={() => setShowLevelInfo(!showLevelInfo)}
+          >
+            ⓘ
+          </button>
+
+          {showLevelInfo && (
+            <div className={styles.levelTooltip}>
+              매년 독서 목표를 달성하면 레벨이 1 상승합니다.
+              <br />
+              다음 레벨은 다음 연도 목표 달성 시 획득할 수 있습니다.
+            </div>
+          )}
+        </div>
       </section>
 
       <section className={styles.summaryBox}>
