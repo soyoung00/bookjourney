@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f3f3;
+  margin: 0;
+}
+
+* { box-sizing: border-box; }
+img { vertical-align: middle; }
+a {color: white; text-decoration: none;}
+ul, li { margin: 0; padding: 0; list-style-type: none; }
+h1, h2, h3, p, figure { margin: 0; }
+table { border-collapse: collapse; }
+
+
+.mobile-wrap {
+  width: 390px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #fff;
+  overflow: hidden;
+}
+
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/font/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/font/Pretendard-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/font/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/font/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/font/Pretendard-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cafe24Danjunghae';
+  src: url('/font/Cafe24Danjunghae-v2.0.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}

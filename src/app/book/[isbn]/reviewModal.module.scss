@@ -1,0 +1,163 @@
+.reviewPop {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+
+    background-color: #fff;
+    z-index: 9999;
+
+    overflow-y: auto;
+
+    font-family: 'Pretendard';
+
+    header {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: flex-end;
+        height: 64px;
+        position: relative;
+        font-size: 22px;
+        font-weight: 700;
+
+        h3 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        button {
+            border: none;
+            background: none;
+            padding: 0;
+            cursor: pointer;
+        }
+    }
+
+    h2 {
+        font-size: 15px;
+        font-family: 700;
+    }
+
+    .starScore {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+
+        .starWrap {
+            display: flex;
+            gap: 4px;
+            margin-top: 20px;
+        }
+
+        .starBtn {
+            border: none;
+            background: none;
+            padding: 0;
+            font-size: 30px;
+            color: #d9d9d9;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .starBtn.active {
+            color: #8f5bea;
+        }
+    }
+
+    .reviewWrap {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+
+            border: 1px solid #CECECE;
+            border-radius: 10px;
+            background: #fff;
+
+            font-size: 16px;
+            color: #111;
+            outline: none;
+            padding-left: 10px;
+
+        }
+
+        input {
+            height: 60px;
+        }
+
+        textarea {
+            height: 200px;
+            font-family: 'Pretendard';
+            resize: none;
+            padding: 10px;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #9264E6;
+            background-color: #fcfaff;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #B5B5B5;
+        }
+    }
+
+
+    .bottomArea {
+        width: 90%;
+        margin: 40px auto 0 auto;
+
+        .completeBtn {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+            border-radius: 16px;
+
+            background: #9B6BFF;
+            color: #fff;
+
+            font-size: 18px;
+            font-weight: 500;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .completeBtn:active {
+            transform: scale(0.97);
+        }
+
+        .errorText {
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #ff4d4f;
+
+        }
+    }
+
+
+}

@@ -1,0 +1,303 @@
+.bookdetail {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  font-family: "Pretendard";
+}
+.bookdetail .header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 100%;
+  max-width: 390px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.bookdetail .header .backBtn {
+  display: flex;
+  align-items: center;
+}
+.bookdetail .header > h3 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.bookdetail section {
+  width: 90%;
+  margin: 0 auto;
+}
+.bookdetail .bookSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 90px 0 40px 0;
+  border-bottom: 1px solid #E8E8E8;
+  gap: 24px;
+}
+.bookdetail .bookSection .bookImg {
+  width: 128px;
+  height: 190px;
+  overflow: hidden;
+  border-radius: 5px;
+  flex-shrink: 0;
+  box-shadow: 1px 1px 9px rgba(60, 40, 90, 0.1294117647);
+}
+.bookdetail .bookSection .bookImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.bookdetail .bookSection .bookInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.bookdetail .bookSection .bookInfo h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.bookdetail .bookSection .bookInfo p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #787878;
+}
+.bookdetail .bookSection .bookInfo span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #787878;
+}
+.bookdetail .bookSection .bookInfo > a {
+  color: #9264E6;
+  border: 1px solid #9264E6;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding: 6px 0;
+  margin-top: 30px;
+}
+.bookdetail .bookSection .bookInfo a:active {
+  transform: scale(0.97);
+  background: #f7f1ff;
+}
+.bookdetail .summarySection {
+  padding: 40px 0;
+  border-bottom: 1px solid #E8E8E8;
+  font-size: 15px;
+  font-weight: 400;
+}
+.bookdetail .summarySection h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.bookdetail .summarySection p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.bookdetail .reviewSection {
+  padding: 40px 0 80px;
+}
+.bookdetail .reviewSection h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+.bookdetail .reviewSection .noReview {
+  margin-top: 20px;
+  color: #7542D2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 80px;
+  background-color: #F6F1FF;
+  border-radius: 10px;
+}
+.bookdetail .reviewSection .noReview h3 {
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+}
+.bookdetail .reviewList {
+  margin-top: 20px;
+}
+.bookdetail .reviewCard {
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.bookdetail .reviewTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bookdetail .starWrap {
+  color: #9B6BFF;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.bookdetail .reviewMeta {
+  margin-top: 6px;
+  color: #9b9b9b;
+  font-size: 13px;
+}
+.bookdetail .likeWrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #9a9a9a;
+  font-size: 12px;
+  cursor: pointer;
+}
+.bookdetail .likeWrap img {
+  width: 14px;
+  height: 14px;
+}
+.bookdetail .reviewText {
+  margin-top: 10px;
+  color: #222;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.bookdetail .startBtn {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 360px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1.5px solid #9B6BFF;
+  border-radius: 16px;
+  background: #fff;
+  color: #9B6BFF;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.bookdetail .startBtn img {
+  width: 20px;
+  height: 20px;
+}
+.bookdetail .startBtn:active {
+  transform: translateX(-50%) scale(0.97);
+  background: #f7f1ff;
+}
+.bookdetail .completeWrap {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bookdetail .completeWrap .completeBtn {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 16px;
+  background: #9B6BFF;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.bookdetail .completeWrap .cancleBtn {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border: 1.5px solid #9B6BFF;
+  border-radius: 16px;
+  background: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  color: #9B6BFF;
+  transition: 0.2s ease;
+}
+.bookdetail .completeWrap .completeBtn:active {
+  transform: scale(0.97);
+}
+.bookdetail .completeWrap .cancleBtn:active {
+  transform: scale(0.97);
+}
+.bookdetail .btnGap {
+  margin-top: 40px;
+}
+.bookdetail .complete {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 360px;
+  height: 87px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border: 1.5px solid #9B6BFF;
+  border-radius: 16px;
+  background: #F9F6FE;
+  color: #9B6BFF;
+}
+.bookdetail .complete div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.bookdetail .complete div span {
+  font-size: 18px;
+  font-family: 500;
+}
+.bookdetail .complete div img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  transform: translateY(1px);
+}
+.bookdetail .complete a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #9264E6;
+}
+.bookdetail .complete a p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+.bookdetail .complete a img {
+  display: block;
+  transform: translateY(1px);
+}/*# sourceMappingURL=bookDetail.module.css.map */
