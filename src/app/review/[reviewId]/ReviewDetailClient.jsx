@@ -49,7 +49,15 @@ function ReviewDetailClient({ reviewId }) {
   }, [review]);
 
   if (!review || !book) {
-    return <div className={styles.loading}>불러오는 중...</div>;
+    return <div className={styles.loadingWrap}>
+      <p>로딩 중</p>
+
+      <div className={styles.dots}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>;
   }
 
   const handleEdit = async () => {
