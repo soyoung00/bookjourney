@@ -10,6 +10,11 @@ export default function LoginPage() {
       <Suspense fallback={null}>
         <LoginForm />
       </Suspense>
+
+      <div className={styles.test}>
+        [Test 계정]
+        아이디 : kd / 비밀번호 : 1234
+      </div>
     </main>
   );
 }
