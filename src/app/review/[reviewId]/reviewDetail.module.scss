@@ -221,43 +221,6 @@
         white-space: pre-line;
     }
 
-    .loadingWrap {
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    p {
-        margin: 0;
-        color: #888;
-        font-size: 14px;
-        font-weight: 500;
-    }
-}
-
-.dots {
-    display: flex;
-    gap: 6px;
-
-    span {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #9B6BFF;
-        animation: dotBounce 1.2s infinite ease-in-out;
-    }
-
-    span:nth-child(2) {
-        animation-delay: 0.15s;
-    }
-
-    span:nth-child(3) {
-        animation-delay: 0.3s;
-    }
-}
 
 
     .quoteInput,
@@ -311,6 +274,44 @@
         resize: none;
 
         white-space: pre-line;
+    }
+}
+
+.loadingWrap {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    p {
+        margin: 0;
+        color: #888;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.dots {
+    display: flex;
+    gap: 6px;
+
+    span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #9B6BFF;
+        animation: dotBounce 1.2s infinite ease-in-out;
+    }
+
+    span:nth-child(2) {
+        animation-delay: 0.15s;
+    }
+
+    span:nth-child(3) {
+        animation-delay: 0.3s;
     }
 }
 
