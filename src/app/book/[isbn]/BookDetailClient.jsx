@@ -15,6 +15,7 @@ export default function BookDetailClient({ book }) {
     const [likedReviews, setLikedReviews] = useState({});
     const [filter, setFilter] = useState(true);
     const router = useRouter();
+    const [myReview, setMyReview] = useState(null);
 
     const sortedReviews = [...(reviewData || [])].sort((a, b) => {
         if (filter) {
@@ -27,17 +28,20 @@ export default function BookDetailClient({ book }) {
     });
 
 
-    // 1. 내 독서 상태 확인용
+    // 1. 내 독서 상태 + 내 리뷰 id 확인용
     const getMyReviewStatus = async () => {
         if (!session) return;
 
         const myRes = await fetch(
             `/api/reviews?bookId=${book.isbn}&userEmail=${session.user.email}`
         );
+
         const myData = await myRes.json();
 
+        setMyReview(myData);
+
         if (myData?.status) {
-            setReadStatus(myData?.status || "");
+            setReadStatus(myData.status);
         }
     };
     // 2. 이 책의 전체 리뷰 목록용
@@ -52,17 +56,13 @@ export default function BookDetailClient({ book }) {
 
     // 페이지 진입시 리뷰 목록 가져오기
     useEffect(() => {
-        if (!session) return;
-        getReviewList();
-    }, [session]);
-
-    //session 생기면 내 독서 상태 가져오기
-    useEffect(() => {
         if (status === "loading") return;
         if (!session) return;
 
         getMyReviewStatus();
+        getReviewList();
     }, [session, status]);
+
 
     const handleStart = async (status) => {
         const goalRes = await fetch(
@@ -346,10 +346,12 @@ export default function BookDetailClient({ book }) {
                                 <img src="/img/ic_completed.png" alt="" />
                                 <span>완독 완료</span>
                             </div>
-                            <Link href="/journey">
-                                <p>나의 독후감을 확인해보세요</p>
-                                <img src="/img/ic_rightArrow.png" alt="" />
-                            </Link>
+                            {myReview?._id && (
+                                <Link href={`/review/${myReview._id}`}>
+                                    <p>나의 독후감을 확인해보세요</p>
+                                    <img src="/img/ic_rightArrow.png" alt="" />
+                                </Link>
+                            )}
                         </button>
                     </>
                 ) : (
