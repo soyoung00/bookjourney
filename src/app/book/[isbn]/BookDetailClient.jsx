@@ -346,7 +346,7 @@ export default function BookDetailClient({ book }) {
                                 <img src="/img/ic_completed.png" alt="" />
                                 <span>완독 완료</span>
                             </div>
-                            <Link href="/">
+                            <Link href="/journey">
                                 <p>나의 독후감을 확인해보세요</p>
                                 <img src="/img/ic_rightArrow.png" alt="" />
                             </Link>
